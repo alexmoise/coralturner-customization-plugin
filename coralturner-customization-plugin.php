@@ -4,12 +4,19 @@
  * Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * GitHub Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * Description: A custom plugin to add required customizations to Coral Turner Woocommerce shop and to style the front end as required. Works based on Woocommerce and Clothing69 theme. For details/troubleshooting please contact me at https://moise.pro/contact/
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Alex Moise
  * Author URI: https://moise.pro
  */
 
 if ( ! defined( 'ABSPATH' ) ) {	exit(0);}
+
+// Adding own CSS
+add_action( 'wp_enqueue_scripts', 'moctcp_adding_styles', 9999 ); // I want it last!
+function moctcp_adding_styles() {
+	wp_register_style('ctcp-styles', plugins_url('ctcp.css', __FILE__));
+	wp_enqueue_style('ctcp-styles');
+}
 
 // Moving some WooCommerce stuff around so the products looks like magazine covers :-)
 add_action('init', 'moctcp_layout_adjustments');
@@ -27,4 +34,3 @@ function moctcp_layout_adjustments() {
 	add_action('woocommerce_before_shop_loop_item', 'clothing69_woocommerce_title_wrapper_end', 130);
 	add_action('woocommerce_before_shop_loop_item', 'clothing69_woocommerce_item_wrapper_end', 140 );
 }
-
