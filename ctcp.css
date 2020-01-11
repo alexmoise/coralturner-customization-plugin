@@ -4,12 +4,6 @@
  * (version above is equal with main plugin file version when this file was updated)
  */
  
-/* === The Woocommerce archive pages as magazine covers === */
-body.woocommerce ul.products > li.product {
-    padding: 1em 20px 1em 20px;
-}
-body.woocommerce ul.products {
-    margin: 0;
-}
+ 
  
  
