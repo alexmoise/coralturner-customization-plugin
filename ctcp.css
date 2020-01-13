@@ -1,15 +1,81 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.5
+ * Version: 0.0.7
  * (version above is equal with main plugin file version when this file was updated)
  */
  
 /* === The Woocommerce archive pages as magazine covers === */
+@media (min-width:960px) {
+	body.woocommerce ul.products > li.product {
+		width: calc(33.33% - 10px) !important;
+	}
+}
+@media (min-width:768px) and (max-width:959px) {
+	body.woocommerce ul.products > li.product {
+		width: calc(50% - 10px) !important;
+	}
+}
+@media (max-width:767px) {
+	body.woocommerce ul.products > li.product {
+		width: calc(100% - 10px) !important;
+	    margin: 10px 50% !important;
+		transform: translateX(-50%);
+		float: left !important;
+	}
+}
 body.woocommerce ul.products > li.product {
-    padding: 1em 20px 1em 20px;
+    padding: 20px 20px 1em 20px;
+    margin: 5px;
+    border: 1px solid #f1f1f1;
+    background: url(/wp-content/plugins/coralturner-customization-plugin/img/paper-background-290.jpg);
+	background-size: cover;
+    box-shadow: 1px 1px 2px 0px #96969673;
 }
 body.woocommerce ul.products {
     margin: 0;
 }
- 
- 
+body.woocommerce ul.products li.product .post_item.post_layout_thumbs {
+    position: relative;
+}
+body.woocommerce ul.products li.product .cover_short_description {
+	position: relative;
+    padding: 5px;
+    width: calc(50% - 20px);
+    height: 110px;
+}
+body.woocommerce ul.products li.product span.cover_short_description_inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+body.woocommerce ul.products li.product .cover_long_description {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    margin: 15px 10%;
+    background-color: #3a3a3a87;
+    color: white;
+    padding: 0 10px;
+	pointer-events: none;
+}
+body.woocommerce ul.products li.product .cover_long_description h2 {
+    font-size: 16px;
+	color:white;
+}
+body.woocommerce ul.products li.product h2.woocommerce-loop-product__title a {
+    font-family: Pacifico, cursive;
+	text-transform: capitalize;
+    font-weight: bold;
+    font-size: x-large;
+    line-height: 34px;
+}
+body.woocommerce ul.products li.product .post_data {
+    padding: 5px !important;
+    text-align: right !important;
+	height: 110px !important;
+}
+body.woocommerce ul.products li.product .post_header.entry-header {
+    top: 50%;
+    transform: translateY(-60%);
+}
