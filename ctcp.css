@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.9
+ * Version: 0.0.10
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -82,4 +82,7 @@ body.woocommerce ul.products li.product .post_header.entry-header {
 }
 .related.products .post_featured.hover_none {
     display: none;
+}
+section.related.products {
+    clear: both;
 }

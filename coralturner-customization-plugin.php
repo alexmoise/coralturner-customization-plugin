@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * GitHub Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * Description: A custom plugin to add required customizations to Coral Turner Woocommerce shop and to style the front end as required. Works based on Woocommerce and Clothing69 theme. For details/troubleshooting please contact me at https://moise.pro/contact/
- * Version: 0.0.9
+ * Version: 0.0.10
  * Author: Alex Moise
  * Author URI: https://moise.pro
  */
@@ -31,7 +31,7 @@ add_action('init', 'moctcp_layout_adjustments');
 function moctcp_layout_adjustments() {
 	// Remove price and buy button in product lists:
 	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
-	remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+	remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 	// Remove the title from its original place:
 	remove_action('woocommerce_before_shop_loop_item_title', 'clothing69_woocommerce_item_wrapper_start', 9 );
 	remove_action('woocommerce_before_shop_loop_item_title', 'clothing69_woocommerce_title_wrapper_start', 20 );
@@ -66,7 +66,8 @@ function moctcp_echo_cover_long_description(){
 	echo '</div>';
 }
 
-// Output conditional styles, based on the (non)existence of "cover_short_description" field
+// Output conditional styles, based on the (non)existence of "cover_short_description" field 
+// (theme Clothing69 has a filter that moves all styles in <head> anyway, so no pfoblem to output these in the page)
 function moctcp_style_product_title() {
 	global $product;
 	$curr_prod_id = $product->get_id();
