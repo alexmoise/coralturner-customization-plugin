@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.12
+ * Version: 0.0.13
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -120,7 +120,7 @@ ul.sub-menu > li > a:hover > span {
 .menu_mobile_inner {
     background-color: #c33442 !important;
 }
-section.related.products h2 {
+section.related.products > h2 {
     color: #c33442 !important;
 }
 .woocommerce-ordering .select_container, 
