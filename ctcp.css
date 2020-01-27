@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.7
+ * Version: 0.0.8
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -78,4 +78,7 @@ body.woocommerce ul.products li.product .post_data {
 body.woocommerce ul.products li.product .post_header.entry-header {
     top: 50%;
     transform: translateY(-60%);
+}
+.related.products .post_featured.hover_none {
+    display: none;
 }
