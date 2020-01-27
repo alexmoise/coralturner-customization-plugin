@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.10
+ * Version: 0.0.11
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -85,4 +85,13 @@ body.woocommerce ul.products li.product .post_header.entry-header {
 }
 section.related.products {
     clear: both;
+}
+.product .summary.entry-summary span.woocommerce-Price-amount.amount {
+    font-size: 24px !important;
+}
+.woocommerce div.product form.cart p.price {
+    margin-bottom: 20px;
+}
+.woocommerce div.product .woocommerce-product-details__short-description {
+    margin-bottom: 20px !important;
 }
