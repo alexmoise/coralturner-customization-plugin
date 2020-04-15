@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.13
+ * Version: 0.0.14
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -155,4 +155,36 @@ form.search_form input.search_field {
 .scheme_default .post_layout_excerpt:not(.sticky) .post_title a {
     color: #c33442 !important;
 }
-
+.post_content h3, .post_content h4 {
+    color: #c33442;
+}
+/* Font background sequins - a way smaller image */
+.style_text>*, .post_item_404 .page_title, .post_item_none_search .page_title, .post_item_none_archive .page_title, h2.sc_item_title.sc_item_title_style_default:not(.sc_item_title_tag), .trx_addons_dropcap.trx_addons_dropcap_style_1, .sc_layouts_title_caption {
+    background-image: url(/wp-content/plugins/coralturner-customization-plugin/img/bg_font.jpg);
+}
+/* Custom Footer widgets */
+.three_footer_widgets .wpb_wrapper .sc_content {
+    float: none;
+    display: inline-block;
+    overflow: hidden;
+    padding: 20px;
+    vertical-align: top;
+    /* min-height: 300px; */
+}
+@media(max-width:768px) {
+    .three_footer_widgets .wpb_wrapper .sc_content {
+        width: 100%;
+    }
+}
+@media(min-width:769px) {
+    .three_footer_widgets .wpb_wrapper .sc_content {
+        width: 33.3%;
+    }
+}
+.three_footer_widgets #menu-quick-links li {
+    margin-top: 5px !important;
+    margin-bottom: 10px;
+}
+.three_footer_widgets .vc_column-inner {
+    padding: 0 !important;
+}
