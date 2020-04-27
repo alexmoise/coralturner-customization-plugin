@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * GitHub Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * Description: A custom plugin to add required customizations to Coral Turner Woocommerce shop and to style the front end as required. Works based on Woocommerce and Clothing69 theme. For details/troubleshooting please contact me at https://moise.pro/contact/
- * Version: 0.0.15
+ * Version: 0.0.17
  * Author: Alex Moise
  * Author URI: https://moise.pro
  * WC requires at least: 3.0.0
@@ -107,7 +107,47 @@ $translated = str_ireplace( 'All Posts', 'Life & Style', $translated );
 return $translated;
 }
 
-
-
+// === Add custom colors styles in wp_head
+// First let's ease "blog" definition
+function moctcp_is_blog () { return ( is_archive() || is_author() || is_category() || is_home() || is_tag()) && 'post' == get_post_type(); }
+add_action( 'wp_head', 'moctcp_custom_posts_colors', 99999 );
+function moctcp_custom_posts_colors() {
+	// Let's do this only when it's "blog" situation
+    if ( moctcp_is_blog () ) {
+		// and let's have some default colors defined in the first place
+		$default_post_background_color = '#ebe9e6';
+		$default_post_text_color = '#c33442';
+		// get the IDs of all the post in the page first
+		global $wp_query;
+        $displayed_ids = wp_list_pluck( $wp_query->posts, 'ID' );
+		// start the styles block
+		echo '
+		<style type="text/css">
+		/* Coral custom post colors START v19 */
+		/* Default colors - BKG: '.$default_post_background_color.' TXT: '.$default_post_text_color.' */'; 
+		// Now for each post, output its styles
+		foreach ($displayed_ids as $displayed_id) {
+			// set the colors right first (defined or defaults)
+			if ( get_field("post_cover_text_color", $displayed_id) ) { $curr_post_text_color = get_field("post_cover_text_color", $displayed_id); } else { $curr_post_text_color = $default_post_text_color; }
+			if ( get_field("post_cover_background_color", $displayed_id) ) { $curr_post_background_color = get_field("post_cover_background_color", $displayed_id); } else { $curr_post_background_color = $default_post_background_color; }
+			// then start outputting that CSS
+			// text color
+			echo '
+			article#post-'.$displayed_id.' .post_header.entry-header *, 
+			article#post-'.$displayed_id.' .post_content.entry-content .post_content_inner, 
+			article#post-'.$displayed_id.' .post_content.entry-content .post_meta * { color: '.$curr_post_text_color.' !important; }';
+			// background color
+			echo '
+			article#post-'.$displayed_id.'.post_layout_excerpt, article#post-'.$displayed_id.' .wrap_post_single { background-color: '.$curr_post_background_color.' !important; }';
+			// More Info button, reversed colors background and text
+			echo '
+			article#post-'.$displayed_id.'.post_layout_excerpt a.more-link { color: '.$curr_post_background_color.' !important; background-color: '.$curr_post_text_color.' !important;  }';
+		}
+		// end the styles block
+		echo '
+		/* Coral custom post colors END */</style>
+		';
+    }
+}
 
 ?>

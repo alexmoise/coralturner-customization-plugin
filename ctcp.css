@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.14
+ * Version: 0.0.17
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -139,24 +139,23 @@ section.related.products > h2 {
 }
 .scheme_default .post_layout_excerpt.sticky, 
 .scheme_default .post_layout_excerpt.sticky .wrap_post_single {
-    background-color: #c33442;
+    /* background-color: #c33442; */
 }
-
+.scheme_default .post_layout_excerpt.sticky .post_title a:hover {
+    /* color: #2c292c !important; */
+}
+.scheme_default .post_layout_excerpt:not(.sticky) .post_title a {
+    /* color: #c33442 !important; */
+}
 .scheme_default .post_layout_excerpt.sticky a.more-link {
-    background: #2c292c !important;
+    /* background: #2c292c !important; */
+}
+.post_content h3, .post_content h4 {
+    color: #c33442;
 }
 form.search_form input.search_field {
     background-color: #c33442 !important;
     border-color: #c33442 !important;
-}
-.scheme_default .post_layout_excerpt.sticky .post_title a:hover {
-    color: #2c292c !important;
-}
-.scheme_default .post_layout_excerpt:not(.sticky) .post_title a {
-    color: #c33442 !important;
-}
-.post_content h3, .post_content h4 {
-    color: #c33442;
 }
 /* Font background sequins - a way smaller image */
 .style_text>*, .post_item_404 .page_title, .post_item_none_search .page_title, .post_item_none_archive .page_title, h2.sc_item_title.sc_item_title_style_default:not(.sc_item_title_tag), .trx_addons_dropcap.trx_addons_dropcap_style_1, .sc_layouts_title_caption {
@@ -187,4 +186,29 @@ form.search_form input.search_field {
 }
 .three_footer_widgets .vc_column-inner {
     padding: 0 !important;
+}
+/* Social icons in footer */
+.footer_socials .socials_wrap .social_item .social_icon {
+    display: inline;
+}
+.footer_socials a > span.social_icon {
+    border: 0 !important;
+    background-color: transparent !important;
+    width: 24px !important;
+    height: 24px !important;
+}
+.footer_socials a > span.social_icon > span {
+    line-height: 0 !important;
+    font-size: 22px;
+    color: #c33442;
+    vertical-align: text-top;
+}
+.footer_socials a {
+    margin: 0 20px 0 0 !important;
+}
+.footer_copyright_row > .wpb_column.vc_col-sm-8  {
+    width: 66.666% !important;
+}
+.footer_copyright_row > .wpb_column.vc_col-sm-4 {
+    width: 33.333% !important;
 }
