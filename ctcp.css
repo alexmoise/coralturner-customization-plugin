@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.17
+ * Version: 0.0.18
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -182,7 +182,7 @@ form.search_form input.search_field {
 }
 .three_footer_widgets #menu-quick-links li {
     margin-top: 5px !important;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .three_footer_widgets .vc_column-inner {
     padding: 0 !important;
