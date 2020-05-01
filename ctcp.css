@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.18
+ * Version: 0.0.19
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -98,6 +98,13 @@ section.related.products {
 .product_meta span.sku_wrapper, .product_meta span.sku_wrapper .sku {
     font-size: 12px;
     color: gray !important;
+}
+/* Other Woocommerce styles */
+.woocommerce-checkout input, 
+.woocommerce-checkout textarea, 
+.woocommerce-cart input, 
+.woocommerce-cart textarea {
+    text-transform: none !important;
 }
 /* Main Menu */
 ul#menu_main > li > a > span {
