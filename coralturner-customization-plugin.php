@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * GitHub Plugin URI: https://github.com/alexmoise/coralturner-customization-plugin
  * Description: A custom plugin to add required customizations to Coral Turner Woocommerce shop and to style the front end as required. Works based on Woocommerce and Clothing69 theme. For details/troubleshooting please contact me at https://moise.pro/contact/
- * Version: 0.0.19
+ * Version: 0.0.20
  * Author: Alex Moise
  * Author URI: https://moise.pro
  * WC requires at least: 3.0.0
@@ -148,6 +148,23 @@ function moctcp_custom_posts_colors() {
 		/* Coral custom post colors END */</style>
 		';
     }
+}
+
+// Create a better login name for new customers
+add_filter( 'woocommerce_new_customer_data', 'moctcp_custom_new_customer_data', 10, 1 );
+function moctcp_custom_new_customer_data( $new_customer_data ){
+    // get the first and last billing names
+    if(isset($_POST['billing_first_name'])) $first_name = $_POST['billing_first_name'];
+    if(isset($_POST['billing_last_name'])) $last_name = $_POST['billing_last_name'];
+    // the customer billing complete name
+    if( ! empty($first_name) || ! empty($last_name) )
+        $complete_name = $first_name . ' ' . $last_name;
+
+    // Replacing 'user_login' in the user data array, before data is inserted
+    if( ! empty($complete_name) )
+        $new_customer_data['user_login'] = sanitize_user( str_replace( ' ', '-', $complete_name ) );
+
+    return $new_customer_data;
 }
 
 ?>
