@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.19
+ * Version: 0.0.21
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -109,6 +109,10 @@ section.related.products {
 form input, form textarea {
     text-transform: none !important;
 }
+/* Create an account option */
+form.checkout input#createaccount {
+    display: inline-block !important;
+}
 /* Main Menu */
 ul#menu_main > li > a > span {
     color: #c33442;
@@ -170,6 +174,16 @@ form.search_form input.search_field {
 /* Font background sequins - a way smaller image */
 .style_text>*, .post_item_404 .page_title, .post_item_none_search .page_title, .post_item_none_archive .page_title, h2.sc_item_title.sc_item_title_style_default:not(.sc_item_title_tag), .trx_addons_dropcap.trx_addons_dropcap_style_1, .sc_layouts_title_caption {
     background-image: url(/wp-content/plugins/coralturner-customization-plugin/img/bg_font.jpg);
+}
+/* Login reset pass forms */
+label.woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+    line-height: 41px;
+}
+.woocommerce-account .content .woocommerce h2 {
+    margin: 5px auto;
+}
+.woocommerce-account .anr_captcha_field {
+    margin: 0 auto 10px auto;
 }
 /* Custom Footer widgets */
 .three_footer_widgets .wpb_wrapper .sc_content {
