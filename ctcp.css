@@ -1,6 +1,6 @@
 /**
  * CSS styles for Coralturner.com customizations plugin
- * Version: 0.0.22
+ * Version: 0.0.23
  * (version above is equal with main plugin file version when this file was updated)
  */
  
@@ -67,7 +67,7 @@ body.woocommerce ul.products li.product .cover_long_description h2 {
 body.woocommerce ul.products li.product h2.woocommerce-loop-product__title a {
 	font-family: inherit;
     text-transform: capitalize;
-    font-size: 23px;
+    font-size: 28px;
     line-height: 34px;
 }
 body.woocommerce ul.products li.product .post_data {
